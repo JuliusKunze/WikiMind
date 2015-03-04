@@ -8,8 +8,9 @@ import org.sweble.wikitext.engine.utils.*
 import org.sweble.wikitext.parser.nodes.*
 
 fun main(args: Array<String>) {
-    val title = "Tree"
-    val url = URL("http://en.wikipedia.org/w/index.php?title=${title}&action=edit")
+    val language = "de"
+    val title = "Stringtheorie"
+    val url = URL("http://${language}.wikipedia.org/w/index.php?title=${title}&action=edit")
 
     val wikiText = url.getWikipediaContentAsMarkup()
     val tempFile = getTempFile()
@@ -30,6 +31,7 @@ private fun WtNode.text(indentLevel: Int = 0): String = " ".repeat(2 * indentLev
     is WtItalics -> "/${subTextsCommaJoined()}/"
     is WtPageName -> subTextsCommaJoined()
     is WtLinkTitle -> subTextsCommaJoined()
+    is WtParagraph -> map {it.text()}.join("")
     is WtInternalLink -> "${getTitle().text()}[${getTarget().text()}]"
     else -> "{${javaClass.getSimpleName()}}${map {"\n" + it.text(indentLevel = indentLevel + 1)}.join("")}"
 }
@@ -38,7 +40,7 @@ fun URL.getText() = BufferedReader(InputStreamReader(openStream())).readText()
 fun URL.getWikipediaContentAsMarkup() = Jsoup.parse(getText()).select("#wpTextbox1").text()
 
 val WtText.content: String get() = getContent()
-fun WtNode.subTexts(indentLevel : Int = 0) = map {it.text(indentLevel)}
-fun WtNode.subTextsCommaJoined(indentLevel : Int = 0) = subTexts(indentLevel = indentLevel).join(", ")
+fun WtNode.subTexts() = map {it.text()}
+fun WtNode.subTextsCommaJoined() = subTexts().join(", ")
 
 fun getTempFile() = File(File(File("C:"), "tmp"), "tempFile.txt")
