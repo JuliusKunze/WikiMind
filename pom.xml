@@ -34,11 +34,6 @@
             <artifactId>swc-engine</artifactId>
             <version>${sweble.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.sweble.wikitext</groupId>
-            <artifactId>swc-example-basic</artifactId>
-            <version>${sweble.version}</version>
-        </dependency>
     </dependencies>
 
     <build>

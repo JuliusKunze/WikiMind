@@ -13,15 +13,10 @@ fun main(args: Array<String>) {
     val url = URL("http://${language}.wikipedia.org/w/index.php?title=${title}&action=edit")
 
     val wikiText = url.getWikipediaContentAsMarkup()
-    val tempFile = getTempFile()
-    tempFile.createNewFile()
-    tempFile.writeText(wikiText)
 
     val config = DefaultConfigEnWp.generate()
     val engine = WtEngineImpl(config)
-    val pageTitle = PageTitle.make(config, tempFile.path)
-    val pageId = PageId(pageTitle, -1)
-    val cp = engine.postprocess(pageId, wikiText, null)
+    val cp = engine.postprocess(PageId(PageTitle.make(config, title), -1), wikiText, null)
     println(cp.text())
 }
 
@@ -42,5 +37,3 @@ fun URL.getWikipediaContentAsMarkup() = Jsoup.parse(getText()).select("#wpTextbo
 val WtText.content: String get() = getContent()
 fun WtNode.subTexts() = map {it.text()}
 fun WtNode.subTextsCommaJoined() = subTexts().join(", ")
-
-fun getTempFile() = File(File(File("C:"), "tmp"), "tempFile.txt")
