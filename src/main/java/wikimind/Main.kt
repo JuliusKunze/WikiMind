@@ -16,8 +16,8 @@ fun main(args: Array<String>) {
 
     val config = DefaultConfigEnWp.generate()
     val engine = WtEngineImpl(config)
-    val cp = engine.postprocess(PageId(PageTitle.make(config, title), -1), wikiText, null)
-    println(cp.text())
+    val page = engine.postprocess(PageId(PageTitle.make(config, title), -1), wikiText, null).getPage()
+    println(page.text())
 }
 
 private fun WtNode.text(indentLevel: Int = 0): String = " ".repeat(2 * indentLevel) + when (this) {
@@ -37,3 +37,5 @@ fun URL.getWikipediaContentAsMarkup() = Jsoup.parse(getText()).select("#wpTextbo
 val WtText.content: String get() = getContent()
 fun WtNode.subTexts() = map {it.text()}
 fun WtNode.subTextsCommaJoined() = subTexts().join(", ")
+
+class Article(val title: String, paragraphs: List<WtParagraph>, val subArticles: List<Article>)
