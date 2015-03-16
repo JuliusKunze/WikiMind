@@ -47,14 +47,14 @@ fun URL.getText() = BufferedReader(InputStreamReader(openStream())).readText()
 fun URL.getWikipediaContentAsMarkup() = Jsoup.parse(getText()).select("#wpTextbox1").text()
 
 val WtText.content: String get() = getContent()
-fun WtNode.subTexts() = map {it.text()}
+fun WtNode.subTexts() = map { it.text() }
 fun WtNode.subTextsCommaJoined() = subTexts().join(", ")
 
 fun String.indented(indentation: String = "\t") = this.split("\n").map { indentation + it }.join("\n")
 
 class Node(val name: String, val paragraphs: List<WtParagraph>, val subNodes: List<Node>) {
     override fun toString(): String =
-            "= ${name} ="+
+            "= ${name} =" +
                     "\n" +
                     "\n" + paragraphs.map { it.text() }.join("\n") +
                     "\n" +

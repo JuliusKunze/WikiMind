@@ -1,5 +1,7 @@
+def kotlin_version = '0.10.195'
+
 buildscript {
-    ext.kotlin_version = '0.10.1316'
+    ext.kotlin_version = kotlin_version
     repositories {
         mavenCentral()
     }
@@ -15,13 +17,12 @@ repositories {
 }
 
 dependencies {
-    def kotlin_version = '0.10.195'
-    compile (
+    compile(
             [group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: kotlin_version],
             [group: 'org.jsoup', name: 'jsoup', version: '1.8.1'],
             [group: 'org.sweble.wikitext', name: 'swc-engine', version: '2.0.0']
     )
-    testCompile (
+    testCompile(
             'junit:junit:4.11'
     )
 }
