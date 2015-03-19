@@ -14,7 +14,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
-    <orderEntry type="jdk" jdkName="Java 1.8" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:0.10.195" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.jetbrains.kotlin:kotlin-runtime:0.10.195" level="project" />
@@ -35,5 +35,6 @@
     <orderEntry type="library" exported="" name="Gradle: commons-lang:commons-lang:2.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.6" level="project" />
     <orderEntry type="library" exported="" name="Gradle: net.sf.jopt-simple:jopt-simple:4.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.spek:spek:0.1.145" level="project" />
   </component>
 </module>

@@ -1,8 +1,12 @@
-import org.junit.Test
+import org.jetbrains.spek.api.*
 
-class TestTest {
-    Test fun test() {
-        main(array())
-        println("Does this work?")
+class SpekSpecs : Spek() {{
+    given("something") {
+        on("an event") {
+            it("should work") {
+                main(array())
+                println("Does this work?")
+            }
+        }
     }
-}
+}}

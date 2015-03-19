@@ -1,12 +1,10 @@
-def kotlin_version = '0.10.195'
-
 buildscript {
-    ext.kotlin_version = kotlin_version
+    ext.kotlin_version = '0.10.195'
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:0.10.195"
     }
 }
 
@@ -14,15 +12,20 @@ apply plugin: "kotlin"
 
 repositories {
     mavenCentral()
+    mavenLocal()
+    maven {
+        url "http://repository.jetbrains.com/all"
+    }
 }
 
 dependencies {
     compile(
-            [group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: kotlin_version],
-            [group: 'org.jsoup', name: 'jsoup', version: '1.8.1'],
-            [group: 'org.sweble.wikitext', name: 'swc-engine', version: '2.0.0']
+            'org.jetbrains.kotlin:kotlin-stdlib:0.10.195',
+            'org.jsoup:jsoup:1.8.1',
+            'org.sweble.wikitext:swc-engine:2.0.0'
     )
+
     testCompile(
-            'junit:junit:4.11'
+            'org.jetbrains.spek:spek:0.1.145'
     )
 }
