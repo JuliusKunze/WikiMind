@@ -1,10 +1,10 @@
 buildscript {
-    ext.kotlin_version = '0.10.195'
+    ext.kotlin_version = '0.11.91'
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:0.10.195"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:0.11.91"
     }
 }
 
@@ -20,12 +20,12 @@ repositories {
 
 dependencies {
     compile(
-            'org.jetbrains.kotlin:kotlin-stdlib:0.10.195',
+            'org.jetbrains.kotlin:kotlin-stdlib:0.11.91',
             'org.jsoup:jsoup:1.8.1',
             'org.sweble.wikitext:swc-engine:2.0.0'
     )
 
     testCompile(
-            'org.jetbrains.spek:spek:0.1.145'
+            'org.jetbrains.spek:spek:0.1-SNAPSHOT'
     )
 }
