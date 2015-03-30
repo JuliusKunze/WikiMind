@@ -34,7 +34,7 @@
     <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.6" level="project" />
     <orderEntry type="library" exported="" name="Gradle: net.sf.jopt-simple:jopt-simple:4.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.spek:spek:0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:0.11.91.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.jetbrains.kotlin:kotlin-runtime:0.11.91.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.jetbrains.kotlin:kotlin-runtime:0.1-SNAPSHOT" level="project" />
   </component>
 </module>

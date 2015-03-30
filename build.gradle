@@ -1,11 +1,11 @@
 buildscript {
-    ext.kotlin_version = '0.11.91.1'
     repositories {
         mavenCentral()
+        maven { url 'http://oss.sonatype.org/content/repositories/snapshots' }
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:0.11.91.1"
-    }
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.1-SNAPSHOT'
+}
 }
 
 apply plugin: "kotlin"
@@ -13,14 +13,13 @@ apply plugin: "kotlin"
 repositories {
     mavenCentral()
     mavenLocal()
-    maven {
-        url "http://repository.jetbrains.com/all"
-    }
+    maven { url 'http://repository.jetbrains.com/all' }
+    maven { url 'http://oss.sonatype.org/content/repositories/snapshots' }
 }
 
 dependencies {
     compile(
-            'org.jetbrains.kotlin:kotlin-stdlib:0.11.91.1',
+            'org.jetbrains.kotlin:kotlin-stdlib:0.1-SNAPSHOT',
             'org.jsoup:jsoup:1.8.1',
             'org.sweble.wikitext:swc-engine:2.0.0'
     )
