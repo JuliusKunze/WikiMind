@@ -1,10 +1,10 @@
 buildscript {
-    ext.kotlin_version = '0.11.91'
+    ext.kotlin_version = '0.11.91.1'
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:0.11.91"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:0.11.91.1"
     }
 }
 
@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
     compile(
-            'org.jetbrains.kotlin:kotlin-stdlib:0.11.91',
+            'org.jetbrains.kotlin:kotlin-stdlib:0.11.91.1',
             'org.jsoup:jsoup:1.8.1',
             'org.sweble.wikitext:swc-engine:2.0.0'
     )
